@@ -1,0 +1,6 @@
+uid,name,role,active
+01020304,Alice_BlueCard,ADMIN,1
+11223344,Bob_GreenCard,STAFF,1
+55667788,Carol_YellowCard,STUDENT,1
+04112233445566,Dan_NFCtag,STUDENT,1
+C0FFEE99,Eve_KeyFob,STAFF,1

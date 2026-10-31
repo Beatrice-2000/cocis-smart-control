@@ -1,0 +1,11 @@
+[wokwi]
+version = 1
+firmware = 'build/flasher_args.json'
+elf = 'build/cocis_smart.elf'
+
+# Simulated SD card: files in ./sdcard are copied to the card at start;
+# writeback keeps the logs the firmware writes (needs Wokwi for VS Code 4.0+).
+[[sdcard]]
+folder = 'sdcard'
+size = '32M'
+writeback = true
