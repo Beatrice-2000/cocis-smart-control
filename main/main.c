@@ -1,15 +1,3 @@
-/*
- * CoCIS Smart Control - ONE ESP32 RUNS EVERYTHING
- *
- *   ENTRANCE part : rfid_task x2 --scan--> [q_scans] --> access_task --> doors, log
- *                   emergency ISR --> semaphore --> emergency_task
- *   ROOMS part    : PIR ISR + vacancy timer + room_task x2   (see rooms.c)
- *   SUPPORT       : monitor_task (schedule changes, status), logger_task (SD card), cli_task (serial menu)
- *
- * The program is organised as three "logical terminals" (entrance, room 1, room 2) that only talk
- * to each other through well-defined functions, queues and mutex-protected data. That is exactly
- * what would be split across three boards in a bigger installation.
- */
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
