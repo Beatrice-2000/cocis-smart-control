@@ -1,13 +1,3 @@
-/*
- * Storage + logging.
- *
- * Many tasks want to write log lines at the same time (2 reader tasks, access task,
- * monitor task, CLI...). If they all wrote to the SD card directly we would get
- * mixed-up lines and SPI bus conflicts. So:
- *     any task --> log queue --> ONE logger task --> SD card
- * The queue serialises everything (producer/consumer), the mutex protects the file
- * system when other modules (users list, CLI export) also touch the card.
- */
 #include <stdarg.h>
 #include <string.h>
 #include <time.h>
